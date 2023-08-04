@@ -1,0 +1,24 @@
+abstract class Creator{
+    // Definimos método abstracto mal
+    public abstract Product factoryMethod();
+}
+public class ConcreteCreator extends Creator{
+    public Product factoryMethod() {
+        return new ConcreteProduct();
+    }
+}
+public interface Product{
+    public void operacion();
+}
+
+public class ConcreteProduct implements Product{
+    public void operacion(){
+        System.out.println("Una operación de este producto");
+    }
+}
+public static void main(String args[]){
+    Creator aCreator;
+    aCreator = new ConcreteCreator();
+    Product producto = aCreator.factoryMethod();
+    producto.operacion();
+}
