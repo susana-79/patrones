@@ -1,19 +1,7 @@
 interface  IDataAdapter {
   String convert(XMLToJSON xml) throws IOException;
 }
-public class XMLToJSON {
-  public XMLToJSON(String xml) {
-    this.xml = xml;
-  }
-  private final String xml;
-  public String convertToJSONFromXML() throws IOException {
-    //lógica para convertir a JSON
-    XmlMapper xmlMapper = new XmlMapper();
-    JsonNode node = xmlMapper.readTree(xml.getBytes());
-    ObjectMapper jsonMapper = new ObjectMapper();
-    return jsonMapper.writeValueAsString(node);
-  }
-}
+
 public class XMLToJSON {
   public XMLToJSON(String xml) {
     this.xml = xml;
